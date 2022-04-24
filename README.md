@@ -1,8 +1,7 @@
 # Dronazon
 
 ### Introduction
-The purpose of the project is to create a system that manages the deliveries of orders received from the Dronazon e-commerce site, through the use of
-of drones.
+The purpose of the project is to create a system that manages the deliveries of orders received from the Dronazon e-commerce site, through the use of drones.
 
 (project done for the Distributed and Pervasive System course of Unimi) 
 
