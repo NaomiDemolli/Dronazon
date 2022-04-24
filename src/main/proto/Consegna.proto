@@ -1,0 +1,25 @@
+
+ syntax = "proto3";
+ package com.example.consegna;
+
+ import "google/protobuf/timestamp.proto";
+
+
+ message InfoDelivery {
+    repeated int32 fromPosition = 1;
+    repeated int32 toPosition = 2;
+    int32 id = 3;
+    int32 masterId = 4;
+ }
+
+ message Statistics {
+    double distance = 1;
+    repeated int32 newPosition = 2;
+    int32 battery = 3;
+    int64 timestamp = 4;
+    double avgPollution = 5;
+ }
+
+ service Consegna {
+     rpc assignConsegna(stream InfoDelivery) returns (Statistics);
+ }

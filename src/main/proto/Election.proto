@@ -1,0 +1,24 @@
+ syntax = "proto3";
+ package com.example.elezione;
+
+ message ElectionMessage {
+    int32 id = 1;
+    string command = 2;
+    int32 battery = 3;
+ }
+
+ message OkElection {
+    string ok = 1;
+ }
+
+ message BrokenRing {
+    int32 idFailedDrone = 1;
+ }
+
+ service Election {
+     rpc makingElection(stream ElectionMessage) returns (stream OkElection);
+ }
+
+ service FailureElection {
+    rpc failElection(stream BrokenRing) returns (OkElection);
+ }

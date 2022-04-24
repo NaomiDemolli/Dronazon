@@ -1,0 +1,14 @@
+ syntax = "proto3";
+ package com.example.ping;
+
+ message isThereMessage {
+    int32 idDrone = 1;
+ }
+
+ message masterMessage {
+    int32 idMaster = 1;
+ }
+
+ service Ping {
+     rpc pingMaster(isThereMessage) returns (masterMessage);
+ }

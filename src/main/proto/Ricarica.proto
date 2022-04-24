@@ -1,0 +1,20 @@
+syntax = "proto3";
+package com.example.ricarica;
+
+message RicaricaRequest {
+    string resource = 1;
+    int32 id = 2;
+    string ip = 3;
+    int32 port = 4;
+    int64 timestamp = 5;
+}
+
+message OkRicarica {
+    int32 id = 1;
+}
+
+service Ricarica {
+     rpc wannaRecharge(stream  RicaricaRequest) returns (stream OkRicarica);
+     rpc sendPendingOk(stream OkRicarica) returns (stream OkRicarica);
+     rpc sayRechargeTerminated(OkRicarica) returns (stream OkRicarica);
+}

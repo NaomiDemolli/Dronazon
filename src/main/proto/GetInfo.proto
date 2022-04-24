@@ -1,0 +1,18 @@
+ syntax = "proto3";
+ package com.example.getinfo;
+
+ message RequestMessage {
+    int32 idMaster = 1;
+ }
+
+ message InfoMessage {
+      int32 id = 1;
+      string ip = 2;
+      int32 port = 3;
+      repeated int32 position = 4;
+      int32 battery = 5;
+ }
+
+ service GetInfo {
+     rpc gettingInfo(RequestMessage) returns (InfoMessage);
+ }

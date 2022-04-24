@@ -1,0 +1,18 @@
+ syntax = "proto3";
+ package com.example.initpres;
+
+ message HelloMessage {
+     int32 id = 1;
+     string ip = 2;
+     int32 port = 3;
+     repeated int32 position = 4;
+ }
+
+ message OkMessage {
+     bool IsMaster = 1;
+     bool IsPartecipant = 2;
+ }
+
+ service InitPresentation {
+     rpc hello(HelloMessage) returns (OkMessage);
+ }
